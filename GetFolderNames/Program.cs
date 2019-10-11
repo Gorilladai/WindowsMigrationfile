@@ -48,8 +48,6 @@ namespace GetFolderNames
             foreach (var item in dirs)
             {
                 var copy = string.Format(@"move {0} {1}", item.FullName, saveDir);
-
-                //mklink / J "e:\test" "f:\test"
                 var mklink = string.Format(@"mklink /J {0} {1}", item.FullName, Path.Combine(saveDir, item.Name));
                 msgs.Add(copy);
                 msgs.Add(mklink);
